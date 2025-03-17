@@ -9,7 +9,7 @@ jobs:
       - name: Say hello
         run: echo "Hello, world!"
 
-  echo-goobye: 
+  echo-goodbye: 
     runs-on: ubuntu-latest
     steps:
       - name: Success step

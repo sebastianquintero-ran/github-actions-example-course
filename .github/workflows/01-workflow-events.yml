@@ -1,7 +1,8 @@
 name: 02 - Worflow Events
 
 on: 
-    push
+    pull_request:
+        types: [opened]
 
 jobs:
     echo:

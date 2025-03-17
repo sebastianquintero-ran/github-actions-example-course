@@ -3,6 +3,12 @@ name: 02 - Worflow Events
 on: 
     pull_request:
         types: [opened]
+    push:
+        branches: [ main, develop ]
+    schedule:
+        - cron: '40 5,17 * * *'
+    workflow_dispatch:
+
 
 jobs:
     echo:

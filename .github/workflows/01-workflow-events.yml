@@ -1,0 +1,13 @@
+name: 02 - Worflow Events
+
+on: 
+    pull_request:
+        types: [opened]
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show the trigger
+              run: |
+                echo "Event name: ${{github.event_name}}"

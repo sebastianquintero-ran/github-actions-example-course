@@ -1,12 +1,6 @@
 name: 02 - Worflow Events
 
-on: 
-    pull_request:
-        types: [opened]
-    push:
-        branches: [ main, develop ]
-    schedule:
-        - cron: '*/5 * * * *'
+on:
     workflow_dispatch:
 
 

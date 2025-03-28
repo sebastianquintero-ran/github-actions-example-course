@@ -5,6 +5,9 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 04-github-actions/react-app
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -14,9 +17,6 @@ jobs:
         with:
           node-version: 'latest'
       - name: Install Dependencies
-        working-directory: 04-github-actions/react-app
         run: npm ci
-
-      # 0 .Checkout 
-      # 1. Install dependencies
-      # 2. Excute automated test
+      - name: Run Unit Test
+        run: npm run test

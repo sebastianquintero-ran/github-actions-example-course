@@ -1,0 +1,16 @@
+name: 05 - 2 - Event Filters and Activity Types
+
+on:
+    pull_request:
+        types: [ closed ]
+        branches:
+           - main
+
+jobs:
+    Echo-2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Prints Event Trigger of workflow
+              run:
+                echo "Running whenever a PR is closed"
+                

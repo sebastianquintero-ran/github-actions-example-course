@@ -1,5 +1,7 @@
 name: 06 - Contexts
 
+run-name: My custom workflow run name - ${{ runner.os }}
+
 on:
     push:
     workflow_dispatch:
@@ -20,4 +22,3 @@ jobs:
             - name: Retrieve Variable
               run: |
                 echo " Value of the variable contained on my Repository ${{ vars.MY_VAR }}."
-                echo "repository variable : $MY_VAR"

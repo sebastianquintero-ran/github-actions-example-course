@@ -8,6 +8,16 @@ jobs:
     echo1:
         runs-on: ubuntu-latest
         steps:
+          - name: Print PR title
+            run: ${{ github.event.pull_request }}
+
+          - name: Print PR labels
+            run: ${{ toJson(github.event.pull_request.labels)}}
+
+          - name: Bug step
+            if: failure() && contains(github.event.pull_request, 'fix') && !cancelled()
+            run: "I am a bug fix"
+
           - name: Sleep for 20 seconds
             shell: bash
             run: sleep 20
@@ -30,4 +40,3 @@ jobs:
           - name: I will execute when cancelled
             if: cancelled()
             run: echo "I will always print if the steps or job be cancelled."
-            

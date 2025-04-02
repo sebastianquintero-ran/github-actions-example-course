@@ -18,7 +18,7 @@ jobs:
                 EOF
 
           - name: Bug step
-            if: cancelled() == false && contains(github.event.pull_request.title, 'fix')
+            if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix') }}
             run: "I am a bug fix"
 
           - name: Sleep for 20 seconds
